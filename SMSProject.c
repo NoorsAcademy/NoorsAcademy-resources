@@ -12,15 +12,18 @@ int main()
     printf("*****************************\n");
     printf("\t\tMENU\n");
     printf("*****************************\n");
-    printf("1. Add a student\n");
-    printf("2. Display all students\n");
-    printf("3. Search for a student\n");
-    printf("4. Update student details\n");
-    printf("5. Delete a student\n");
-    printf("6. Exit\n");
+    do
+    {
+        printf("1. Add a student\n");
+        printf("2. Display all students\n");
+        printf("3. Search for a student\n");
+        printf("4. Update student details\n");
+        printf("5. Delete a student\n");
+        printf("6. Exit\n");
 
-    printf("Enter your choice: ");
-    scanf("%d", &choice);
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+    } while (choice < 1 || choice > 6);
 
     switch (choice)
     {
@@ -49,25 +52,28 @@ int main()
         break;
     default:
         printf("Invalid Input\n");
-        }
-
-    printf("Do you want to add a student? (1 for Yes, 0 for No): ");
-    scanf("%d", &addStudent);
-
-    if (addStudent == 1)
-    {
-        printf("Student added!\n");
     }
-    else
+
+    do
     {
-        if (addStudent == 0)
+        printf("Do you want to add a student? (1 for Yes, 0 for No): ");
+        scanf("%d", &addStudent);
+
+        if (addStudent == 1)
         {
-            printf("No student added.\n");
+            printf("Student added!\n");
         }
         else
         {
-            printf("Invalid input.\n");
+            if (addStudent == 0)
+            {
+                printf("No student added.\n");
+            }
+            else
+            {
+                printf("Invalid input.\n");
+            }
         }
-    }
+    } while (addStudent != 1 && addStudent != 0);
     return 0;
 }
